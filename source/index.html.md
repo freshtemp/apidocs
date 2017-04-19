@@ -53,7 +53,7 @@ let api = freshtemp.authorize('hjkh76g65dds37nbvxa');
 
 > Make sure to replace `hjkh76g65dds37nbvxa` with your API key.
 
-FreshTemp uses API keys to allow access to the API. You can register a new FreshTemp API key at our [developer portal](http://app.freshtemp.com/developer).
+FreshTemp uses API keys to allow access to the API. You can register a new FreshTemp API key at our [developer portal](http://app.freshtemp.com).
 
 FreshTemp expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
