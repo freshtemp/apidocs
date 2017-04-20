@@ -65,15 +65,169 @@ You must replace <code>hjkh76g65dds37nbvxa</code> with your personal API key.
 
 # Users
 
-## Get All Users
+## The user object
+
+
+```json
+[
+  {
+    "id": "usr_87df9sa7fclkjaf",
+    "object" : "user",
+    "api_version": "v1",
+    "username": "",
+    "locations": {
+      "loc_fdkj8asldkj",
+      "loc_fdkj8asldkj",
+    }
+  }
+]
+```
+
+The user object
+
+<table><thead>
+<tr>
+<th style="color: #939da3;text-transform: uppercase;">Attributes</th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="width:180px; text-align: right">id<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
+<td>Unique identifier for the object</td>
+</tr>
+<tr>
+<td style="width:180px; text-align: right">object<div style="color: #939da3;padding: 4px 0 0;">string, value is "user"</div></td>
+<td>String representing the object’s type.</td>
+</tr>
+</tbody></table>
+
+## Create a user
+
+Not currently supported
+
+## Retrieve a user
+
+Not currently supported
+
+## Update a user
+
+Not currently supported
+
+## Delete a user
+
+Not currently supported
+
+## List All Users
+
+Not currently supported
 
 # Locations
 
-## Get All Locations
+## The location object
 
-# Equipment
 
-## Get All Equipment
+```json
+[
+  {
+    "id": "loc_87df9sa7fclkjaf",
+    "object" : "location",
+    "api_version": "v1",
+    "name": "Restaurant #123",
+    "timezone": "EDT",
+  }
+]
+```
+
+The location object
+
+<table><thead>
+<tr>
+<th style="color: #939da3;text-transform: uppercase;">Attributes</th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="width:180px; text-align: right">id<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
+<td>Unique identifier for the object</td>
+</tr>
+<tr>
+<td style="width:180px; text-align: right">object<div style="color: #939da3;padding: 4px 0 0;">string, value is "location"</div></td>
+<td>String representing the object’s type.</td>
+</tr>
+<tr>
+<td style="width:180px; text-align: right">api_version<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
+<td>The FreshTemp API version used to render data.</td>
+</tr>
+<tr>
+<td style="width:180px; text-align: right">timezone<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
+<td>The timezone at the location.</td>
+</tr>
+</tbody></table>
+
+## Create a location
+
+Not currently supported
+
+## Retrieve a location
+
+Not currently supported
+
+## Update a location
+
+Not currently supported
+
+## Delete a location
+
+Not currently supported
+
+## List All Locations
+
+Not currently supported
+
+# Sensors
+
+## The sensor object
+
+```json
+[
+  {
+    "id": "sen_87df9sa7fclkjaf",
+    "object" : "sensor",
+    "api_version": "v1",
+    "mac_address": "00:41:23:23:af:42",
+    "created" : "2017-01-03 08:32:32 UTC",
+    "current_reading" : "302",
+    "current_temperature" : "43.34",
+    "last_updated" : " 2017-03-04 23:32:23 UTC"
+  }
+]
+```
+
+The sensor object
+
+<table><thead>
+<tr>
+<th style="color: #939da3;text-transform: uppercase;">Attributes</th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="width:180px; text-align: right">id<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
+<td>Unique identifier for the object</td>
+</tr>
+<tr>
+<td style="width:180px; text-align: right">object<div style="color: #939da3;padding: 4px 0 0;">string, value is "location"</div></td>
+<td>String representing the object’s type.</td>
+</tr>
+<tr>
+<td style="width:180px; text-align: right">api_version<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
+<td>The FreshTemp API version used to render data.</td>
+</tr>
+<tr>
+<td style="width:180px; text-align: right">timezone<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
+<td>The timezone at the location.</td>
+</tr>
+</tbody></table>
 
 # Checklists
 
@@ -227,58 +381,10 @@ This endpoint retrieves all tasks.
 
 `GET https://api.freshtemp.com/v1/tasks/loc_8RUs1PpoUuNXyw`
 
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-location | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
 <aside class="success">
 Remember — Every request is an authenticated!
 </aside>
 
-## Get a Specific Kitten
-
-```ruby
-require 'freshtemp'
-
-api = freshtemp::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import freshtemp
-
-api = freshtemp.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const freshtemp = require('freshtemp');
-
-let api = freshtemp.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
 
 <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 
@@ -290,5 +396,5 @@ This endpoint retrieves a specific kitten.
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to retrieve
+ID | The ID of the parameter to retrieve
 
