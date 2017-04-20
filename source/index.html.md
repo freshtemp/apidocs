@@ -75,6 +75,7 @@ You must replace <code>hjkh76g65dds37nbvxa</code> with your personal API key.
     "object" : "user",
     "api_version": "v1",
     "username": "",
+    "email": "",
     "locations": {
       "loc_fdkj8asldkj",
       "loc_fdkj8asldkj",
@@ -133,6 +134,8 @@ Not currently supported
     "object" : "location",
     "api_version": "v1",
     "name": "Restaurant #123",
+    "address" : "1 Pike Place, Seattle, WA",
+    "created" : "2017-01-01 01:23:49 UTC",
     "timezone": "EDT",
   }
 ]
@@ -157,6 +160,14 @@ The location object
 <tr>
 <td style="width:180px; text-align: right">api_version<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
 <td>The FreshTemp API version used to render data.</td>
+</tr>
+<tr>
+<td style="width:180px; text-align: right">address<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
+<td>The address of the location.</td>
+</tr>
+<tr>
+<td style="width:180px; text-align: right">created<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
+<td>The datetime when the location was created.</td>
 </tr>
 <tr>
 <td style="width:180px; text-align: right">timezone<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
@@ -196,9 +207,10 @@ Not currently supported
     "api_version": "v1",
     "mac_address": "00:41:23:23:af:42",
     "created" : "2017-01-03 08:32:32 UTC",
-    "current_reading" : "302",
-    "current_temperature" : "43.34",
-    "last_updated" : " 2017-03-04 23:32:23 UTC"
+    "adc_reading" : "302",
+    "temperature" : "43.34",
+    "last_updated" : " 2017-03-04 23:32:23 UTC",
+    "transmit_interval" : "210",
   }
 ]
 ```
@@ -224,8 +236,28 @@ The sensor object
 <td>The FreshTemp API version used to render data.</td>
 </tr>
 <tr>
-<td style="width:180px; text-align: right">timezone<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
-<td>The timezone at the location.</td>
+<td style="width:180px; text-align: right">mac_address<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
+<td>The unique mac address of the sensor.</td>
+</tr>
+<tr>
+<td style="width:180px; text-align: right">created<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
+<td>The datetime when the sensor was created.</td>
+</tr>
+<tr>
+<td style="width:180px; text-align: right">adc_reading<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
+<td>The ADC value returned from the last measurement reading.</td>
+</tr>
+<tr>
+<td style="width:180px; text-align: right">temperature<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
+<td>The last measured temperature of the sensor.</td>
+</tr>
+<tr>
+<td style="width:180px; text-align: right">last_updated<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
+<td>The datetime when the last measurement was recorded.</td>
+</tr>
+<tr>
+<td style="width:180px; text-align: right">transmit_interval<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
+<td>The frequency at which the sensor records and transmits data (in seconds).</td>
 </tr>
 </tbody></table>
 
