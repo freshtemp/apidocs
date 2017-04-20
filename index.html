@@ -276,6 +276,7 @@ You must replace <code>hjkh76g65dds37nbvxa</code> with your personal API key.
     </span><span class="s2">"object"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"api_version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"v1"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
     </span><span class="s2">"locations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"loc_fdkj8asldkj"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"loc_fdkj8asldkj"</span><span class="p">,</span><span class="w">
@@ -330,6 +331,8 @@ You must replace <code>hjkh76g65dds37nbvxa</code> with your personal API key.
     </span><span class="s2">"object"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"location"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"api_version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"v1"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Restaurant #123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"address"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"1 Pike Place, Seattle, WA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-01 01:23:49 UTC"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EDT"</span><span class="p">,</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
@@ -353,6 +356,14 @@ You must replace <code>hjkh76g65dds37nbvxa</code> with your personal API key.
 <tr>
 <td style="width:180px; text-align: right">api_version<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
 <td>The FreshTemp API version used to render data.</td>
+</tr>
+<tr>
+<td style="width:180px; text-align: right">address<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
+<td>The address of the location.</td>
+</tr>
+<tr>
+<td style="width:180px; text-align: right">created<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
+<td>The datetime when the location was created.</td>
 </tr>
 <tr>
 <td style="width:180px; text-align: right">timezone<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
@@ -390,9 +401,10 @@ You must replace <code>hjkh76g65dds37nbvxa</code> with your personal API key.
     </span><span class="s2">"api_version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"v1"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"mac_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:41:23:23:af:42"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"created"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-03 08:32:32 UTC"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"current_reading"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"302"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"current_temperature"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"43.34"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"last_updated"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">" 2017-03-04 23:32:23 UTC"</span><span class="w">
+    </span><span class="s2">"adc_reading"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"302"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"temperature"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"43.34"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_updated"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">" 2017-03-04 23:32:23 UTC"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"transmit_interval"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"210"</span><span class="p">,</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
@@ -417,8 +429,28 @@ You must replace <code>hjkh76g65dds37nbvxa</code> with your personal API key.
 <td>The FreshTemp API version used to render data.</td>
 </tr>
 <tr>
-<td style="width:180px; text-align: right">timezone<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
-<td>The timezone at the location.</td>
+<td style="width:180px; text-align: right">mac_address<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
+<td>The unique mac address of the sensor.</td>
+</tr>
+<tr>
+<td style="width:180px; text-align: right">created<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
+<td>The datetime when the sensor was created.</td>
+</tr>
+<tr>
+<td style="width:180px; text-align: right">adc_reading<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
+<td>The ADC value returned from the last measurement reading.</td>
+</tr>
+<tr>
+<td style="width:180px; text-align: right">temperature<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
+<td>The last measured temperature of the sensor.</td>
+</tr>
+<tr>
+<td style="width:180px; text-align: right">last_updated<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
+<td>The datetime when the last measurement was recorded.</td>
+</tr>
+<tr>
+<td style="width:180px; text-align: right">transmit_interval<div style="color: #939da3;padding: 4px 0 0;">string</div></td>
+<td>The frequency at which the sensor records and transmits data (in seconds).</td>
 </tr>
 </tbody></table>
 
